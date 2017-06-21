@@ -1,21 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_pattern"
     tools:context="com.myst3ry.moneytrackerxe.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world"
-        android:textColor="@color/colorWhite"
-        android:background="@color/colorBlue"
-        android:textSize="@dimen/size_20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingStart="@dimen/margin_large">
 
-</android.support.constraint.ConstraintLayout>
+        <EditText
+            android:id="@+id/articleName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_40"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/articleName"
+            android:inputType="text"
+            android:lines="1"
+            android:textSize="@dimen/standard_text_size" />
+
+        <EditText
+            android:id="@+id/priceField"
+            android:layout_width="60dp"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:background="@android:color/transparent"
+            android:hint="0"
+            android:inputType="number"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/standard_text_size"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/RubSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:text="@string/RUB"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            android:id="@+id/addButton"
+            android:layout_width="@dimen/margin_40"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:enabled="false"
+            android:text="+"
+            android:textAlignment="center"
+            android:textSize="@dimen/xl_text_size"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+</FrameLayout>
