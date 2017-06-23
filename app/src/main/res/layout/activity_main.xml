@@ -10,52 +10,52 @@
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:background="@android:color/white"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingEnd="@dimen/margin_large"
-        android:paddingStart="@dimen/margin_large">
+        android:paddingEnd="@dimen/padding_large"
+        android:paddingStart="@dimen/padding_large">
 
         <EditText
-            android:id="@+id/articleName"
+            android:id="@+id/article_name"
             android:layout_width="0dp"
-            android:layout_height="@dimen/margin_40"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:hint="@string/articleName"
+            android:background="@null"
+            android:hint="@string/article_hint"
             android:inputType="text"
-            android:lines="1"
-            android:textSize="@dimen/standard_text_size" />
+            android:maxLines="1"
+            android:textSize="@dimen/sp_large" />
 
         <EditText
-            android:id="@+id/priceField"
+            android:id="@+id/amount_field"
             android:layout_width="60dp"
-            android:layout_height="@dimen/margin_40"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_small"
-            android:background="@android:color/transparent"
+            android:background="@null"
             android:hint="0"
             android:inputType="number"
             android:textAlignment="textEnd"
-            android:textSize="@dimen/standard_text_size"
+            android:textSize="@dimen/sp_large"
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/RubSign"
+            android:id="@+id/rub_sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
-            android:text="@string/RUB"
-            android:textSize="@dimen/small_text_size" />
+            android:text="@string/rub_sign"
+            android:textSize="@dimen/sp_medium" />
 
         <TextView
-            android:id="@+id/addButton"
-            android:layout_width="@dimen/margin_40"
+            android:id="@+id/add_button"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_medium"
             android:layout_marginStart="@dimen/margin_medium"
             android:enabled="false"
             android:text="+"
             android:textAlignment="center"
-            android:textSize="@dimen/xl_text_size"
+            android:textSize="@dimen/sp_extra_large"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 

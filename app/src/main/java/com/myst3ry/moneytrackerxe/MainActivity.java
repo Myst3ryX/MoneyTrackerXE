@@ -3,6 +3,7 @@ package com.myst3ry.moneytrackerxe;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView addButton = (TextView) findViewById(R.id.addButton);
-        final EditText articleName = (EditText) findViewById(R.id.articleName);
-        final EditText priceField = (EditText) findViewById(R.id.priceField);
+        final TextView addButton = (TextView) findViewById(R.id.add_button);
+        final EditText articleName = (EditText) findViewById(R.id.article_name);
+        final EditText amountField = (EditText) findViewById(R.id.amount_field);
         TextWatcher watcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -24,11 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!articleName.getText().toString().matches("") && !priceField.getText().toString().matches("")) {
-                    addButton.setEnabled(true);
-                } else {
-                    addButton.setEnabled(false);
-                }
+                addButton.setEnabled(!TextUtils.isEmpty(articleName.getText()) && !TextUtils.isEmpty(amountField.getText()));
             }
 
             @Override
@@ -37,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         articleName.addTextChangedListener(watcher);
-        priceField.addTextChangedListener(watcher);
+        amountField.addTextChangedListener(watcher);
     }
 
     @Override
