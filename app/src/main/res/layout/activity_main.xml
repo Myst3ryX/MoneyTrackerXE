@@ -24,7 +24,7 @@
             android:hint="@string/article_hint"
             android:inputType="text"
             android:maxLines="1"
-            android:textSize="@dimen/sp_large" />
+            android:textSize="@dimen/text_size_large" />
 
         <EditText
             android:id="@+id/amount_field"
@@ -35,7 +35,7 @@
             android:hint="0"
             android:inputType="number"
             android:textAlignment="textEnd"
-            android:textSize="@dimen/sp_large"
+            android:textSize="@dimen/text_size_large"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="30dp"
             android:text="@string/rub_sign"
-            android:textSize="@dimen/sp_medium" />
+            android:textSize="@dimen/text_size_medium" />
 
         <TextView
             android:id="@+id/add_button"
@@ -55,7 +55,7 @@
             android:enabled="false"
             android:text="+"
             android:textAlignment="center"
-            android:textSize="@dimen/sp_extra_large"
+            android:textSize="@dimen/text_size_extra_large"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
