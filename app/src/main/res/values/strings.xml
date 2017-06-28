@@ -1,6 +1,18 @@
 <resources>
-    <string name="app_name">MoneyTrackerXE</string>
+    <string name="app_name">MoneyTracker XE</string>
+    <string name="budget_accounting">Учёт бюджета</string>
     <string name="article_hint">Название</string>
     <string name="rub_sign">\u20bd</string>
     <string name="rub_sign_format">%1$d \u20bd</string>
+
+    <string name="expenses">расходы</string>
+    <string name="incomes">доходы</string>
+    <string name="balance">баланс</string>
+
+    <array name="main_titles">
+        <item>@string/expenses</item>
+        <item>@string/incomes</item>
+        <item>@string/balance</item>
+    </array>
+
 </resources>
