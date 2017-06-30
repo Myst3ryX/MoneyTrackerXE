@@ -15,7 +15,7 @@ public class ItemsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.items, null);
+        return inflater.inflate(R.layout.fragment_items, null);
     }
 
     @Override
