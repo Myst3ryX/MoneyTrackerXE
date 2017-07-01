@@ -5,7 +5,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,13 +13,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         final TabLayout tabs = (TabLayout) findViewById(R.id.main_tabs);
         final ViewPager pages = (ViewPager) findViewById(R.id.main_pager);
+
         pages.setAdapter(new MainPagerAdapter());
         tabs.setupWithViewPager(pages);
-        ActionBar mainActBar = getSupportActionBar();
-        mainActBar.setTitle(getString(R.string.budget_accounting));
-        mainActBar.setElevation(0);
+
+        getSupportActionBar().setElevation(0);
     }
 
     private class MainPagerAdapter extends FragmentPagerAdapter {
@@ -36,12 +36,21 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
 
             Bundle args = new Bundle();
-            if (position == 0) args.putString(ItemsFragment.ARG_TYPE, Item.EXP_TYPE);
-            else if (position == 1) args.putString(ItemsFragment.ARG_TYPE, Item.INC_TYPE);
-            else if (position == 2) return new BalanceFragment();
+
+            switch (position) {
+                case 0:
+                    args.putString(ItemsFragment.ARG_TYPE, Item.EXP_TYPE);
+                    break;
+                case 1:
+                    args.putString(ItemsFragment.ARG_TYPE, Item.INC_TYPE);
+                    break;
+                case 2:
+                    return new BalanceFragment();
+            }
 
             Fragment fragment = new ItemsFragment();
             fragment.setArguments(args);
+
             return fragment;
         }
 

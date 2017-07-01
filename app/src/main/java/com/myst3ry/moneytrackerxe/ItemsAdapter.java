@@ -12,19 +12,7 @@ import java.util.List;
 
 class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
-    final private List<Item> itemsList = new ArrayList<>();
-
-    ItemsAdapter() { //fake stub of items
-
-        itemsList.add(new Item("Молоко волшебной коровы", 125));
-        itemsList.add(new Item("Зубная фея КолКейт", 1500));
-        itemsList.add(new Item("Сковородка с пригарно-угарным покрытием", 150000));
-        itemsList.add(new Item("Шоколадка из ада, возможно немножко б/у", 75));
-
-        for (int i = 17; i < 67; i++) {
-            itemsList.add(new Item("Какая-то ненужная шмотка...", i + 5155));
-        }
-    }
+    private List<Item> itemsList = new ArrayList<>();
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -33,15 +21,26 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
+
         final Item currentItem = itemsList.get(position);
-        holder.article.setText(currentItem.getArticle());
         Resources res = holder.itemView.getContext().getResources();
+
+        holder.article.setText(currentItem.getArticle());
         holder.amount.setText(String.format(res.getString(R.string.rub_sign_format), currentItem.getAmount()));
     }
 
     @Override
     public int getItemCount() {
         return itemsList.size();
+    }
+
+    void clear() {
+        itemsList.clear();
+    }
+
+    void addAll(List<Item> data) {
+        itemsList.addAll(data);
+        notifyDataSetChanged();
     }
 
     class ItemViewHolder extends RecyclerView.ViewHolder {

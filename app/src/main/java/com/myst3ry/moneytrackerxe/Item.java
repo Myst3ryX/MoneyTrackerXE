@@ -1,15 +1,25 @@
 package com.myst3ry.moneytrackerxe;
 
-class Item {
+import com.google.gson.annotations.SerializedName;
 
-    static final String EXP_TYPE = "expenses";
-    static final String INC_TYPE = "incomes";
+public class Item {
+
+    static final String EXP_TYPE = "expense";
+    static final String INC_TYPE = "income";
+
+    @SerializedName("name")
     private final String article;
+
+    @SerializedName("price")
     private final int amount;
 
-    Item(final String article, final int amount) {
+    private int id;
+    private final String type;
+
+    Item(final String article, final int amount, final String type) {
         this.article = article;
         this.amount = amount;
+        this.type = type;
     }
 
     String getArticle() {
@@ -18,5 +28,13 @@ class Item {
 
     int getAmount() {
         return amount;
+    }
+
+    String getType() {
+        return type;
+    }
+
+    int getId() {
+        return id;
     }
 }
