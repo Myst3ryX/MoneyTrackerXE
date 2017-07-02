@@ -5,6 +5,8 @@
     <string name="rub_sign">\u20bd</string>
     <string name="rub_sign_format">%1$d \u20bd</string>
 
+    <string name="error">Произошла ошибка!</string>
+
     <string name="expenses">расходы</string>
     <string name="incomes">доходы</string>
     <string name="balance">баланс</string>
