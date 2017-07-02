@@ -1,7 +1,10 @@
 package com.myst3ry.moneytrackerxe;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
@@ -16,6 +19,7 @@ import com.myst3ry.moneytrackerxe.api.AddingResult;
 import com.myst3ry.moneytrackerxe.api.LSApi;
 import com.myst3ry.moneytrackerxe.api.RemovingResult;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class ItemsFragment extends Fragment {
@@ -43,10 +47,33 @@ public class ItemsFragment extends Fragment {
         final RecyclerView items = (RecyclerView) view.findViewById(R.id.items);
         items.setAdapter(adapter);
 
+        final FloatingActionButton addItemButton = (FloatingActionButton) view.findViewById(R.id.floating_add_button);
+        addItemButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddItemActivity.class);
+                intent.putExtra(ARG_TYPE, type);
+                startActivityForResult(intent, AddItemActivity.RCODE_ADD_ITEM);
+            }
+        });
+
         type = getArguments().getString(ARG_TYPE);
         api = ((LSApp) getActivity().getApplication()).getApi();
 
         loadItems();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == AddItemActivity.RCODE_ADD_ITEM && resultCode == Activity.RESULT_OK) {
+
+            Serializable obj = data.getSerializableExtra(AddItemActivity.RESULT_ITEM);
+            if (obj instanceof Item) {
+                Item newItem = (Item) obj;
+                adapter.add(newItem); //test
+                Toast.makeText(getContext(), R.string.item_added_successful, Toast.LENGTH_SHORT).show();
+            }
+        } else Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
     }
 
     public void loadItems() {

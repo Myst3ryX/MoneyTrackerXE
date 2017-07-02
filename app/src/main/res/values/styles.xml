@@ -8,6 +8,14 @@
         <item name="colorAccent">@color/color_accent</item>
     </style>
 
+    <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:actionModeBackground">@color/color_primary_dark</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
     <style name="full_screen_shopping_background">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
