@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
                     return fragment;
                 case 2:
                     return new BalanceFragment();
+                default:
+                    return null;
             }
-
-            return null;
         }
 
         @Override
