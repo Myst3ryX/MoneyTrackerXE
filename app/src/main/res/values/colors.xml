@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="color_primary">#95C9B8</color>
+    <color name="color_primary_dark">#88B6A7</color>
+    <color name="color_accent">#FF4081</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_golden">#FCC418</color>
     <color name="color_orange">#E6AE1E</color>
+    <color name="color_tabs_indicator">#FAFF00</color>
+    <color name="color_tab_text_inactive">#DBECE6</color>
 </resources>
