@@ -5,9 +5,12 @@
     <string name="article_hint">Название</string>
     <string name="rub_sign">\u20bd</string>
     <string name="rub_sign_format">%1$d \u20bd</string>
+    <string name="selected_count_title">%1$d выбрано</string>
 
     <string name="error">Произошла ошибка!</string>
     <string name="item_added_successful">Добавлено</string>
+    <string name="item_removed_successful">%1$d удалено</string>
+    <string name="deleting_confirm">Вы уверены, что хотите удалить выбранные элементы?</string>
 
     <string name="expenses">расходы</string>
     <string name="incomes">доходы</string>

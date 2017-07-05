@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/trash_can"
+        android:title=""
+        android:icon="@drawable/ic_trash_icon_32dp"
+        android:orderInCategory="10"
+        app:showAsAction="ifRoom" />
+
+</menu>

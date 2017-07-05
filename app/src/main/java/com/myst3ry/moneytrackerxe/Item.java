@@ -39,4 +39,8 @@ public class Item implements Serializable {
     int getId() {
         return id;
     }
+
+    void setId(int id) {
+        this.id = id;
+    }
 }

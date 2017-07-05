@@ -16,9 +16,11 @@ public interface LSApi {
     @GET("items")
     Call<List<Item>> items(@Query("type") String type);
 
+    @Headers("Content-Type: application/json")
     @POST("items/add")
-    Call<AddingResult> add(@Query("article") String article, @Query("amount") int amount, @Query("type") String type);
+    Call<AddingResult> add(@Query("name") String article, @Query("price") int amount, @Query("type") String type);
 
+    @Headers("Content-Type: application/json")
     @POST("items/remove")
-    Call<RemovingResult> remove(@Query("id") int id);
+    Call<Result> remove(@Query("id") int id);
 }
