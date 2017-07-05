@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class AddItemActivity extends AppCompatActivity {
 
     public static final int RCODE_ADD_ITEM = 66;
+    public static final String EXTRA_TYPE = "type";
     public static final String RESULT_ITEM = "item";
 
     private String type;
@@ -26,7 +27,7 @@ public class AddItemActivity extends AppCompatActivity {
         final EditText articleName = (EditText) findViewById(R.id.article_name);
         final EditText amountField = (EditText) findViewById(R.id.amount_field);
 
-        type = getIntent().getStringExtra(ItemsFragment.ARG_TYPE);
+        type = getIntent().getStringExtra(EXTRA_TYPE);
 
         TextWatcher watcher = new TextWatcher() {
             @Override

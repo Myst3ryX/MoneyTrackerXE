@@ -52,7 +52,7 @@ public class ItemsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AddItemActivity.class);
-                intent.putExtra(ARG_TYPE, type);
+                intent.putExtra(AddItemActivity.EXTRA_TYPE, type);
                 startActivityForResult(intent, AddItemActivity.RCODE_ADD_ITEM);
             }
         });
@@ -73,7 +73,7 @@ public class ItemsFragment extends Fragment {
                 adapter.add(newItem); //test
                 Toast.makeText(getContext(), R.string.item_added_successful, Toast.LENGTH_SHORT).show();
             }
-        } else Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void loadItems() {
