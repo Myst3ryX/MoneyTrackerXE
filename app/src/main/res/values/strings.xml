@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">MoneyTracker XE</string>
     <string name="budget_accounting">Учёт бюджета</string>
+    <string name="new_item">Новая запись</string>
     <string name="article_hint">Название</string>
     <string name="rub_sign">\u20bd</string>
     <string name="rub_sign_format">%1$d \u20bd</string>
 
     <string name="error">Произошла ошибка!</string>
+    <string name="item_added_successful">Добавлено</string>
 
     <string name="expenses">расходы</string>
     <string name="incomes">доходы</string>

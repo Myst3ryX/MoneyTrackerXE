@@ -2,7 +2,9 @@ package com.myst3ry.moneytrackerxe;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable {
 
     static final String EXP_TYPE = "expense";
     static final String INC_TYPE = "income";

@@ -4,9 +4,15 @@
     <dimen name="text_size_regular">20sp</dimen>
     <dimen name="text_size_large">18sp</dimen>
     <dimen name="text_size_medium">12sp</dimen>
+
     <dimen name="padding_large">16dp</dimen>
     <dimen name="padding_small">5dp</dimen>
+
     <dimen name="margin_large">14dp</dimen>
     <dimen name="margin_medium">8dp</dimen>
     <dimen name="margin_small">4dp</dimen>
+
+    <dimen name="card_elevation">7dp</dimen>
+    <dimen name="margin_floating_button">18dp</dimen>
+
 </resources>
