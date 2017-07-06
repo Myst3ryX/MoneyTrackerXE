@@ -2,7 +2,7 @@ package com.myst3ry.moneytrackerxe.api;
 
 import android.text.TextUtils;
 
-public class Result { //result for removing operation
+public class Result { //result for any operation include removing
 
     private String status;
 

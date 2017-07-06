@@ -42,8 +42,8 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
     }
 
     List<Integer> getSelectedItems() {
-        List<Integer> selectedList = new ArrayList<>();
-        for (int i = 0; i < selectedItems.size(); i++) {
+        List<Integer> selectedList = new ArrayList<>(getSelectedItemsCount());
+        for (int i = 0; i < getSelectedItemsCount(); i++) {
             selectedList.add(selectedItems.keyAt(i));
         }
         return selectedList;
@@ -79,7 +79,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
     void addItemToAdapter(Item item, int id) {
         item.setId(id);
-        itemsList.add(0, item);
+        itemsList.add(item);
         notifyItemInserted(id);
         notifyDataSetChanged();
     }

@@ -30,7 +30,7 @@ public class LSApp extends Application {
                 .build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://lsabox.getsandbox.com/")
+                .baseUrl("http://lsabox.getsandbox.com/") //temp
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
