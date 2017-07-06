@@ -79,8 +79,8 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
     void addItemToAdapter(Item item, int id) {
         item.setId(id);
-        itemsList.add(item);
-        notifyItemInserted(id);
+        itemsList.add(0, item);
+        notifyItemInserted(0);
         notifyDataSetChanged();
     }
 
