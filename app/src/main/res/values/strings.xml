@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">MoneyTracker XE</string>
+    <string name="app_name">MoneyTracker X Edition</string>
+    <string name="auth_button">Google Sing-In</string>
+    <string name="welcome_text">Ваш незаменимый помощник  в управлении бюджетом</string>
     <string name="budget_accounting">Учёт бюджета</string>
     <string name="new_item">Новая запись</string>
     <string name="article_hint">Название</string>
