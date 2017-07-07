@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/trash_can"
-        android:title=""
+        android:title="@string/title_trash_can"
         android:icon="@drawable/ic_trash_icon_32dp"
         android:orderInCategory="10"
         app:showAsAction="ifRoom" />

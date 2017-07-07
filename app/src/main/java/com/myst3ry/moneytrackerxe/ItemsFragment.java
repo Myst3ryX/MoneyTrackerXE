@@ -73,7 +73,7 @@ public class ItemsFragment extends Fragment {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 
-                                    int count = adapter.getSelectedItems().size();
+                                    int count = adapter.getSelectedItemsCount();
                                     for (int i = count - 1; i >= 0; i--)
                                         removeItem(adapter.remove(adapter.getSelectedItems().get(i)));
 

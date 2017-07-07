@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
+public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
     private List<Item> itemsList = new ArrayList<>();
     private SparseBooleanArray selectedItems = new SparseBooleanArray();
@@ -37,11 +37,11 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
         return itemsList.size();
     }
 
-    int getSelectedItemsCount() {
+    public int getSelectedItemsCount() {
         return selectedItems.size();
     }
 
-    List<Integer> getSelectedItems() {
+    public List<Integer> getSelectedItems() {
         List<Integer> selectedList = new ArrayList<>(getSelectedItemsCount());
         for (int i = 0; i < getSelectedItemsCount(); i++) {
             selectedList.add(selectedItems.keyAt(i));
@@ -49,35 +49,38 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
         return selectedList;
     }
 
-    void toggleSelection(int pos) {
-        if (selectedItems.get(pos, false)) selectedItems.delete(pos);
-        else selectedItems.put(pos, true);
+    public void toggleSelection(int pos) {
+        if (selectedItems.get(pos, false)) {
+            selectedItems.delete(pos);
+        } else {
+            selectedItems.put(pos, true);
+        }
         notifyItemChanged(pos);
     }
 
-    void clear() {
+    public void clear() {
         itemsList.clear();
     }
 
-    void clearSelectedItems() {
+    public void clearSelectedItems() {
         for (Integer position : getSelectedItems()) {
             selectedItems.delete(position);
         }
         notifyDataSetChanged();
     }
 
-    Item remove(int pos) {
+    public Item remove(int pos) {
         final Item item = itemsList.remove(pos);
         notifyItemRemoved(pos);
         return item;
     }
 
-    void addAll(List<Item> data) {
+    public void addAll(List<Item> data) {
         itemsList.addAll(data);
         notifyDataSetChanged();
     }
 
-    void addItemToAdapter(Item item, int id) {
+    public void addItemToAdapter(Item item, int id) {
         item.setId(id);
         itemsList.add(0, item);
         notifyItemInserted(0);
