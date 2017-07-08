@@ -6,6 +6,12 @@
     <color name="color_white">#FFFFFF</color>
     <color name="color_golden">#FCC418</color>
     <color name="color_orange">#E6AE1E</color>
+
     <color name="color_tabs_indicator">#FAFF00</color>
     <color name="color_tab_text_inactive">#DBECE6</color>
+    <color name="color_floating_button">#15A599</color>
+
+    <color name="color_selected_item">#995200</color>
+    <color name="color_transparent_black">#30000000</color>
+
 </resources>
