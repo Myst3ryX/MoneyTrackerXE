@@ -24,9 +24,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.myst3ry.moneytrackerxe.api.AddingResult;
 import com.myst3ry.moneytrackerxe.api.LSApi;
-import com.myst3ry.moneytrackerxe.api.Result;
+import com.myst3ry.moneytrackerxe.api.OperationResult;
 
 import java.io.Serializable;
 import java.util.List;
@@ -35,9 +34,9 @@ public class ItemsFragment extends Fragment {
 
     public static final String ARG_TYPE = "type";
 
-    private static final int LOADER_ITEMS = 0;
-    private static final int LOADER_ADD = 1;
-    private static final int LOADER_REMOVE = 2;
+    private static final int LOADER_ITEMS = 1;
+    private static final int LOADER_ADD = 2;
+    private static final int LOADER_REMOVE = 3;
 
     private ItemsAdapter adapter = new ItemsAdapter();
     private String type;
@@ -74,8 +73,9 @@ public class ItemsFragment extends Fragment {
                                 public void onClick(DialogInterface dialog, int which) {
 
                                     int count = adapter.getSelectedItemsCount();
-                                    for (int i = count - 1; i >= 0; i--)
+                                    for (int i = count - 1; i >= 0; i--) {
                                         removeItem(adapter.remove(adapter.getSelectedItems().get(i)));
+                                    }
 
                                     Toast.makeText(getContext(), getString(R.string.item_removed_successful, count), Toast.LENGTH_SHORT).show();
                                 }
@@ -216,16 +216,16 @@ public class ItemsFragment extends Fragment {
     }
 
     public void addItem(final Item item) { //add item to the server
-        getLoaderManager().restartLoader(LOADER_ADD, null, new LoaderManager.LoaderCallbacks<AddingResult>() {
+        getLoaderManager().restartLoader(LOADER_ADD, null, new LoaderManager.LoaderCallbacks<OperationResult>() {
 
             @Override
-            public Loader<AddingResult> onCreateLoader(int id, Bundle args) {
-                return new AsyncTaskLoader<AddingResult>(getContext()) {
+            public Loader<OperationResult> onCreateLoader(int id, Bundle args) {
+                return new AsyncTaskLoader<OperationResult>(getContext()) {
 
                     @Override
-                    public AddingResult loadInBackground() {
+                    public OperationResult loadInBackground() {
                         try {
-                            return api.add(item.getArticle(), item.getAmount(), item.getType()).execute().body();
+                            return api.add(item.getAmount(), item.getArticle(), item.getType()).execute().body();
                         } catch (Exception e) {
                             e.printStackTrace();
                             return null;
@@ -235,28 +235,29 @@ public class ItemsFragment extends Fragment {
             }
 
             @Override
-            public void onLoadFinished(Loader<AddingResult> loader, AddingResult data) {
-
-                if (data == null)
+            public void onLoadFinished(Loader<OperationResult> loader, OperationResult data) {
+                if (data == null) {
                     Toast.makeText(getContext(), R.string.error, Toast.LENGTH_SHORT).show();
-                else adapter.addItemToAdapter(item, data.getId());
+                } else {
+                    adapter.addItemToAdapter(item, data.getId());
+                }
             }
 
             @Override
-            public void onLoaderReset(Loader<AddingResult> loader) {
+            public void onLoaderReset(Loader<OperationResult> loader) {
             }
         }).forceLoad();
     }
 
     public void removeItem(final Item item) { //remove item from the server
-        getLoaderManager().restartLoader(LOADER_REMOVE, null, new LoaderManager.LoaderCallbacks<Result>() {
+        getLoaderManager().restartLoader(LOADER_REMOVE, null, new LoaderManager.LoaderCallbacks<OperationResult>() {
 
             @Override
-            public Loader<Result> onCreateLoader(int id, Bundle args) {
-                return new AsyncTaskLoader<Result>(getContext()) {
+            public Loader<OperationResult> onCreateLoader(int id, Bundle args) {
+                return new AsyncTaskLoader<OperationResult>(getContext()) {
 
                     @Override
-                    public Result loadInBackground() {
+                    public OperationResult loadInBackground() {
                         try {
                             return api.remove(item.getId()).execute().body();
                         } catch (Exception e) {
@@ -268,11 +269,11 @@ public class ItemsFragment extends Fragment {
             }
 
             @Override
-            public void onLoadFinished(Loader<Result> loader, Result data) {
+            public void onLoadFinished(Loader<OperationResult> loader, OperationResult data) {
             }
 
             @Override
-            public void onLoaderReset(Loader<Result> loader) {
+            public void onLoaderReset(Loader<OperationResult> loader) {
             }
         }).forceLoad();
     }

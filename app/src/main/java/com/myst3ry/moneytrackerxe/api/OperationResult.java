@@ -1,7 +1,7 @@
 package com.myst3ry.moneytrackerxe.api;
 
 
-public class AddingResult extends Result { //result for adding operation
+public class OperationResult extends Result { //result for adding and removing operation
 
     private int id;
 
