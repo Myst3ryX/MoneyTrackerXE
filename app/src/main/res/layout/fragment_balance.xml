@@ -1,13 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/full_screen_shopping_background">
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <TextView
+        android:id="@+id/total_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_balance_elements"
+        android:textColor="@color/color_primary_bright"
+        android:textSize="@dimen/text_size_xx_large"
+        android:maxLines="1"
+        tools:text="@string/rub_sign_format" />
+
+    <TextView
+        android:id="@+id/total_balance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/total_balance"
+        android:layout_marginBottom="@dimen/margin_balance_elements"
+        android:textColor="@color/color_gray_text"
+        android:textSize="@dimen/text_size_regular"
+        android:text="@string/your_balance" />
+
+    <TextView
+        android:id="@+id/total_expenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_ginger"
+        android:layout_below="@id/total_balance_text"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/text_size_exp_inc"
+        android:maxLines="1"
+        tools:text="@string/rub_sign_format"
+        app:layout_widthPercent="50%" />
+
+    <TextView
+        android:id="@+id/total_incomes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_golden"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/total_balance_text"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/text_size_exp_inc"
+        android:maxLines="1"
+        tools:text="@string/rub_sign_format"
+        app:layout_widthPercent="50%" />
+
+    <TextView
+        android:id="@+id/total_expenses_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/total_expenses"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_gray_text"
+        android:textSize="@dimen/text_size_medium_balance"
+        android:text="@string/your_expense"
+        app:layout_widthPercent="50%" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/balance"
-        android:textSize="@dimen/text_size_extra_large"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_below="@id/total_incomes"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_gray_text"
+        android:textSize="@dimen/text_size_medium_balance"
+        android:text="@string/your_income"
+        app:layout_widthPercent="50%" />
 
-</RelativeLayout>
+    <com.myst3ry.moneytrackerxe.DiagramView
+        android:id="@+id/diagram_view"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@id/total_expenses_text"
+        android:layout_margin="@dimen/margin_balance_elements" />
+
+</android.support.percent.PercentRelativeLayout>

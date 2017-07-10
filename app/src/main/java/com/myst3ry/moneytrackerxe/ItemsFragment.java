@@ -161,6 +161,12 @@ public class ItemsFragment extends Fragment {
         loadItems();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadItems();
+    }
+
     public void toggleSelection(MotionEvent e) {
         adapter.toggleSelection(items.getChildLayoutPosition(items.findChildViewUnder(e.getX(), e.getY())));
         actionMode.setTitle(getString(R.string.selected_count_title, adapter.getSelectedItemsCount()));
