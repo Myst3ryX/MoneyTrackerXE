@@ -41,6 +41,7 @@
         <activity
             android:name=".AuthActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait">
 
             <intent-filter>

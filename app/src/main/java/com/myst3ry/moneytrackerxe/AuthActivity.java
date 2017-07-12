@@ -80,7 +80,7 @@ public class AuthActivity extends AppCompatActivity {
                     public void onLoadFinished(Loader<AuthResult> loader, AuthResult data) {
                         if (data != null && data.isSuccessful()) {
                             ((LSApp) getApplication()).editAuthToken(data.getAuthToken());
-                            startActivity(new Intent(AuthActivity.this, MainActivity.class));
+                            finish();
                         } else {
                             Toast.makeText(AuthActivity.this, getString(R.string.auth_error, data.getStatus()), Toast.LENGTH_SHORT).show();
                         }
