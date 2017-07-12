@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_primary"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:background="@color/color_primary">
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="@dimen/margin_auth_images"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/logo"
-        android:paddingTop="50dp"
-        android:paddingBottom="@dimen/padding_auth_images"
         tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/text_main"
-        android:layout_width="200dp"
+        android:layout_width="202dp"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:layout_below="@+id/logo"
+        android:layout_marginBottom="@dimen/margin_auth_images"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
         android:fontFamily="sans-serif"
         android:textColor="@color/color_white"
         android:textSize="@dimen/text_size_medium_title"
-        android:paddingBottom="44dp"
         android:text="@string/welcome_text" />
 
     <ImageButton
@@ -31,14 +34,21 @@
         android:contentDescription="@string/auth_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/text_main"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_auth_images"
         android:src="@drawable/gplus_button"
-        android:background="@color/color_primary"
-        android:paddingBottom="@dimen/padding_auth_images" />
+        android:background="@color/color_primary" />
 
     <ImageView
+        android:id="@+id/bg_intro"
         android:layout_width="match_parent"
-        android:layout_height="265dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/auth_button"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         android:src="@drawable/bg_intro"
         tools:ignore="ContentDescription" />
 
-</LinearLayout>
+</RelativeLayout>
