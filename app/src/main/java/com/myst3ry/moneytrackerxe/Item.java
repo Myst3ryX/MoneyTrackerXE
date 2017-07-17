@@ -3,11 +3,15 @@ package com.myst3ry.moneytrackerxe;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Item implements Serializable {
 
     static final String EXP_TYPE = "expense";
     static final String INC_TYPE = "income";
+
+    private int id;
+    private Date date;
 
     @SerializedName("name")
     private final String article;
@@ -15,7 +19,6 @@ public class Item implements Serializable {
     @SerializedName("price")
     private final int amount;
 
-    private int id;
     private final String type;
 
     Item(final String article, final int amount, final String type) {
@@ -38,6 +41,10 @@ public class Item implements Serializable {
 
     int getId() {
         return id;
+    }
+
+    Date getDate() {
+        return date;
     }
 
     void setId(int id) {

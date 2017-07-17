@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="@dimen/margin_auth_images"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/text_main"
+        android:layout_width="202dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginBottom="@dimen/margin_auth_images"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_size_medium_title"
+        android:text="@string/welcome_text" />
+
+    <ImageButton
+        android:id="@+id/auth_button"
+        android:contentDescription="@string/auth_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_main"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_auth_images"
+        android:src="@drawable/gplus_button"
+        android:background="@color/color_primary" />
+
+    <ImageView
+        android:id="@+id/bg_intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/auth_button"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/bg_intro"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>

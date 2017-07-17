@@ -1,5 +1,6 @@
 package com.myst3ry.moneytrackerxe;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,18 +11,37 @@ import android.support.v7.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TabLayout tabs;
+    private ViewPager pages;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TabLayout tabs = (TabLayout) findViewById(R.id.main_tabs);
-        final ViewPager pages = (ViewPager) findViewById(R.id.main_pager);
+        tabs = (TabLayout) findViewById(R.id.main_tabs);
+        pages = (ViewPager) findViewById(R.id.main_pager);
+
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!((LSApp) getApplication()).isLoggedIn()) {
+            startActivity(new Intent(this, AuthActivity.class));
+        } else {
+            initUI();
+        }
+    }
+
+    private void initUI() {
+        if (pages.getAdapter() != null)
+            return;
 
         pages.setAdapter(new MainPagerAdapter());
         tabs.setupWithViewPager(pages);
-        setSupportActionBar(toolbar);
     }
 
     private class MainPagerAdapter extends FragmentPagerAdapter {

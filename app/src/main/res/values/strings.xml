@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">MoneyTracker XE</string>
+    <string name="app_name">MoneyTracker X Edition</string>
+    <string name="auth_button">Авторизоваться</string>
+    <string name="welcome_text">Ваш незаменимый помощник  в управлении бюджетом</string>
     <string name="budget_accounting">Учёт бюджета</string>
     <string name="new_item">Новая запись</string>
     <string name="article_hint">Название</string>
@@ -8,6 +10,7 @@
     <string name="selected_count_title">%1$d выбрано</string>
 
     <string name="error">Произошла ошибка!</string>
+    <string name="auth_error">Ошибка авторизации: %1$s</string>
     <string name="item_added_successful">Добавлено</string>
     <string name="title_trash_can">Удалить</string>
     <string name="item_removed_successful">%1$d элементов удалено</string>

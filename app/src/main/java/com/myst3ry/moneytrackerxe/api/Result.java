@@ -2,7 +2,7 @@ package com.myst3ry.moneytrackerxe.api;
 
 import android.text.TextUtils;
 
-public class Result { //result for any operation include removing
+public class Result { //base result class for any operation
 
     private String status;
 
@@ -10,4 +10,7 @@ public class Result { //result for any operation include removing
         return TextUtils.equals(status, "success");
     }
 
+    public String getStatus() {
+        return status;
+    }
 }

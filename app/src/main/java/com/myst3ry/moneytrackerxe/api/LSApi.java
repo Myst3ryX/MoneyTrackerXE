@@ -6,21 +6,26 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface LSApi {
 
-    @Headers("Content-Type: application/json")
+    @GET("auth")
+    Call<AuthResult> auth(@Query("social_user_id") String socialUserId);
+
+    @GET("logout")
+    Call<Result> logout(); //will be implement as logout operation later
+
+    @GET("balance")
+    Call<BalanceResult> balance(); //will be implement as check balance operation later
+
     @GET("items")
     Call<List<Item>> items(@Query("type") String type);
 
-    @Headers("Content-Type: application/json")
     @POST("items/add")
-    Call<AddingResult> add(@Query("name") String article, @Query("price") int amount, @Query("type") String type);
+    Call<OperationResult> add(@Query("price") int amount, @Query("name") String article, @Query("type") String type);
 
-    @Headers("Content-Type: application/json")
     @POST("items/remove")
-    Call<Result> remove(@Query("id") int id);
+    Call<OperationResult> remove(@Query("id") int id);
 }
