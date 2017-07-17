@@ -11,11 +11,11 @@
 
     <dimen name="margin_balance_elements">40dp</dimen>
 
-    <dimen name="padding_auth_images">27dp</dimen>
     <dimen name="padding_large">16dp</dimen>
     <dimen name="padding_small">5dp</dimen>
 
     <dimen name="margin_floating_button">18dp</dimen>
+    <dimen name="margin_auth_images">25dp</dimen>
     <dimen name="margin_large">14dp</dimen>
     <dimen name="margin_medium">8dp</dimen>
     <dimen name="margin_small">4dp</dimen>
