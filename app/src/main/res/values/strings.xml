@@ -20,6 +20,10 @@
     <string name="incomes">доходы</string>
     <string name="balance">баланс</string>
 
+    <string name="your_balance">ваш баланс</string>
+    <string name="your_expense">расход</string>
+    <string name="your_income">доход</string>
+
     <array name="main_titles">
         <item>@string/expenses</item>
         <item>@string/incomes</item>

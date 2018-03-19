@@ -2,10 +2,13 @@
 <resources>
     <color name="color_primary">#95C9B8</color>
     <color name="color_primary_dark">#88B6A7</color>
+    <color name="color_primary_bright">#3AB7AE</color>
     <color name="color_accent">#15A599</color>
     <color name="color_white">#FFFFFF</color>
     <color name="color_golden">#FCC418</color>
     <color name="color_orange">#E6AE1E</color>
+    <color name="color_ginger">#F76C3F</color>
+    <color name="color_gray_text">#95989A</color>
 
     <color name="color_tabs_indicator">#FAFF00</color>
     <color name="color_tab_text_inactive">#DBECE6</color>
